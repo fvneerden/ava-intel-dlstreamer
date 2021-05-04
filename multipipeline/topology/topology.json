@@ -127,7 +127,7 @@
         "videoName": "sample-grpc-extension-assets",
         "inputs": [
           {
-            "nodeName": "signalGateProcessor",
+            "nodeName": "rtspSource",
             "outputSelectors": [
               {
                 "property": "mediaType",
