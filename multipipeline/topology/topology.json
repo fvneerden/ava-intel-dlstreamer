@@ -1,8 +1,8 @@
 {
-  "@apiVersion": "2.0",
-  "name": "InferencingWithGrpcExtension",
+  "@apiVersion": "1.0",
+  "name": "InferencingWithOpenVINOgRPC",
   "properties": {
-    "description": "Record on motion to Video Analyzer and record events from external models through gRPC Extension",
+    "description": "Analyzing live video using gRPCExtension to send video frames to the OpenVINO DL Streamer – Edge AI Extension module, from Intel",
     "parameters": [
       {
         "name": "rtspUrl",
@@ -22,16 +22,10 @@
         "default": "dummyPassword"
       },
       {
-        "name": "motionSensitivity",
-        "type": "String",
-        "description": "Motion detection sensitivity",
-        "default": "medium"
-      },
-      {
         "name": "grpcExtensionAddress",
         "type": "String",
-        "description": "grpc AVA Extension Address",
-        "default": "tcp://avaextension:44000"
+        "description": "Address of the gRPC Server",
+        "default": "tcp://avaextension:5001"
       },
       {
         "name": "grpcExtensionUserName",
@@ -60,20 +54,14 @@
       {
         "name": "frameWidth",
         "type": "String",
-        "description": "Width of the video frame to be received from LVA.",
+        "description": "Width of the image frame to be sent to the gRPC Server.",
         "default": "416"
       },
       {
         "name": "frameHeight",
         "type": "String",
-        "description": "Height of the video frame to be received from LVA.",
+        "description": "Height of the image frame to be sent to the gRPC Server.",
         "default": "416"
-      },
-      {
-        "name": "extensionConfiguration",
-        "type": "String",
-        "description": "Optional extension configuration for the gRPC server",
-        "default": "{}"
       }
     ],
     "sources": [
@@ -115,27 +103,17 @@
             "height": "${frameHeight}"
           },
           "format": {
-            "@type": "#Microsoft.VideoAnalyzer.ImageFormatJpeg",
-            "quality": "${imageQuality}"
+            "@type": "#Microsoft.VideoAnalyzer.ImageFormatRaw",
+            "pixelFormat": "bgr24"
           }
-        },
-        "samplingOptions": {
-          "skipSamplesWithoutAnnotation": "false",
-          "maximumSamplesPerSecond": "30"
         },
         "inputs": [
           {
-            "nodeName": "rtspSource",
-            "outputSelectors": [
-              {
-                "property": "mediaType",
-                "operator": "is",
-                "value": "video"
-              }
-            ]
+            "nodeName": "rtspSource"
           }
         ]
-      },
+      }
+    ],
     "sinks": [
       {
         "@type": "#Microsoft.VideoAnalyzer.IoTHubMessageSink",
