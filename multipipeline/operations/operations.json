@@ -1,0 +1,189 @@
+{
+    "apiVersion": "1.0",
+    "operations": [
+        {
+            "opName": "pipelineTopologyList",
+            "opParams": {}
+        },
+        {
+            "opName": "livePipelineList",
+            "opParams": {}
+        },
+        {
+            "opName": "pipelineTopologySet",
+            "opParams": {
+                "pipelineTopologyUrl": "https://raw.githubusercontent.com/fvneerden/ava-intel-dlstreamer/main/multipipeline/topology/topology.json"
+            }
+        },
+        {
+            "opName": "livePipelineSet",
+            "opParams": {
+                "name": "Sample-Pipeline-Detection",
+                "properties": {
+                    "topologyName": "InferencingWithGrpcExtension",
+                    "description": "Sample pipeline description",
+                    "parameters": [
+                        {
+                            "name": "rtspUrl",
+                            "value": "rtsp://rtspsim:554/media/camera-300s.mkv"
+                        },
+                        {
+                            "name": "rtspUserName",
+                            "value": "testuser"
+                        },
+                        {
+                            "name": "rtspPassword",
+                            "value": "testpassword"
+                        },
+                        {
+                            "name": "grpcExtensionAddress",
+                            "value": "tcp://lvaExtension:5001"
+                        },
+                        {
+                            "name": "extensionConfiguration",
+                            "value": "{\"pipeline\":{\"name\":\"object_detection\",\"version\":\"person_vehicle_bike_detection\"}}"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "opName": "livePipelineSet",
+            "opParams": {
+                "name": "Sample-Pipeline-Classification",
+                "properties": {
+                    "topologyName": "InferencingWithGrpcExtension",
+                    "description": "Sample pipeline description",
+                    "parameters": [
+                        {
+                            "name": "rtspUrl",
+                            "value": "rtsp://rtspsim:554/media/camera-300s.mkv"
+                        },
+                        {
+                            "name": "rtspUserName",
+                            "value": "testuser"
+                        },
+                        {
+                            "name": "rtspPassword",
+                            "value": "testpassword"
+                        },
+                        {
+                            "name": "grpcExtensionAddress",
+                            "value": "tcp://lvaExtension:5001"
+                        },
+                        {
+                            "name": "extensionConfiguration",
+                            "value": "{\"pipeline\":{\"name\":\"object_classification\",\"version\":\"vehicle_attributes_recognition\",\"parameters\":{\"detection-device\":\"MYRIAD\"}}}"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "opName": "livePipelineSet",
+            "opParams": {
+                "name": "Sample-Pipeline-Tracking",
+                "properties": {
+                    "topologyName": "InferencingWithGrpcExtension",
+                    "description": "Sample pipeline description",
+                    "parameters": [
+                        {
+                            "name": "rtspUrl",
+                            "value": "rtsp://rtspsim:554/media/camera-300s.mkv"
+                        },
+                        {
+                            "name": "rtspUserName",
+                            "value": "testuser"
+                        },
+                        {
+                            "name": "rtspPassword",
+                            "value": "testpassword"
+                        },
+                        {
+                            "name": "grpcExtensionAddress",
+                            "value": "tcp://lvaExtension:5001"
+                        },
+                        {
+                            "name": "extensionConfiguration",
+                            "value": "{\"pipeline\":{\"name\":\"object_tracking\",\"version\":\"person_vehicle_bike_tracking\",\"parameters\":{\"detection-device\":\"GPU\"}}}"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "opName": "livePipelineActivate",
+            "opParams": {
+                "name": "Sample-Pipeline-Detection"
+            }
+        },
+        {
+            "opName": "livePipelineActivate",
+            "opParams": {
+                "name": "Sample-Pipeline-Classification"
+            }
+        },
+        {
+            "opName": "livePipelineActivate",
+            "opParams": {
+                "name": "Sample-Pipeline-Tracking"
+            }
+        },
+        {
+            "opName": "WaitForInput",
+            "opParams": {
+                "message": "Press Enter to continue. This is start the deactivating steps."
+            }
+        },
+        {
+            "opName": "livePipelineDeactivate",
+            "opParams": {
+                "name": "Sample-Pipeline-Detection"
+            }
+        },
+        {
+            "opName": "livePipelineDeactivate",
+            "opParams": {
+                "name": "Sample-Pipeline-Classification"
+            }
+        },
+        {
+            "opName": "livePipelineDeactivate",
+            "opParams": {
+                "name": "Sample-Pipeline-Tracking"
+            }
+        },
+        {
+            "opName": "livePipelineDelete",
+            "opParams": {
+                "name": "Sample-Pipeline-Detection"
+            }
+        },
+        {
+            "opName": "livePipelineDelete",
+            "opParams": {
+                "name": "Sample-Pipeline-Classification"
+            }
+        },
+        {
+            "opName": "livePipelineDelete",
+            "opParams": {
+                "name": "Sample-Pipeline-Tracking"
+            }
+        },
+        {
+            "opName": "livePipelineList",
+            "opParams": {}
+        },
+        {
+            "opName": "pipelineTopologyDelete",
+            "opParams": {
+                "name": "InferencingWithGrpcExtension"
+            }
+        },
+        {
+            "opName": "pipelineTopologyList",
+            "opParams": {}
+        }
+    ]
+}
