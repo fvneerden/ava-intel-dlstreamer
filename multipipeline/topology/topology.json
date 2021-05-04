@@ -62,6 +62,12 @@
         "type": "String",
         "description": "Height of the image frame to be sent to the gRPC Server.",
         "default": "416"
+      },
+      {
+        "name": "extensionConfiguration",
+        "type": "String",
+        "description": "Optional extension configuration for the gRPC server",
+        "default": "{}"
       }
     ],
     "sources": [
