@@ -120,7 +120,31 @@
         ]
       }
     ],
-    "sinks": [
+"sinks": [
+      {
+        "@type": "#Microsoft.VideoAnalyzer.VideoSink",
+        "name": "videoSink",
+        "videoName": "sample-grpc-extension-assets",
+        "inputs": [
+          {
+            "nodeName": "signalGateProcessor",
+            "outputSelectors": [
+              {
+                "property": "mediaType",
+                "operator": "is",
+                "value": "video"
+              }
+            ]
+          }
+        ],
+        "videoCreationProperties": {
+          "title": "sample-grpc-extension-assets",
+          "description": "Sample video using gRPC extension assets",
+          "segmentLength": "PT30S"
+        },
+        "localMediaCachePath": "/var/lib/videoanalyzer/tmp/",
+        "localMediaCacheMaximumSizeMiB": "2048"
+      },
       {
         "@type": "#Microsoft.VideoAnalyzer.IoTHubMessageSink",
         "name": "hubSink",
