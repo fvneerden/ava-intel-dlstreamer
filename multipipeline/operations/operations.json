@@ -77,7 +77,7 @@
               },
               {
                 "name": "extensionConfiguration",
-                "value": "{\"pipeline\":{\"name\":\"object_classification\",\"version\":\"vehicle_attributes_recognition\",\"parameters\":{\"detection-device\":\"MYRIAD\"}}}"
+                "value": "{\"pipeline\":{\"name\":\"object_classification\",\"version\":\"vehicle_attributes_recognition\",\"parameters\":{\"detection-device\":\"MYRIAD\",\"detection-model-instance-id\":\"MYRIAD_Detection\"}}}"
               }
             ]
           }
@@ -109,7 +109,7 @@
               },
               {
                 "name": "extensionConfiguration",
-                "value": "{\"pipeline\":{\"name\":\"object_tracking\",\"version\":\"person_vehicle_bike_tracking\",\"parameters\":{\"detection-device\":\"GPU\"}}}"
+                "value": "{\"pipeline\":{\"name\":\"object_tracking\",\"version\":\"person_vehicle_bike_tracking\",\"parameters\":{\"detection-device\":\"GPU\",\"detection-model-instance-id\":\"GPU_Detection\"}}}"
               }
             ]
           }
