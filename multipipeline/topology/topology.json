@@ -67,7 +67,7 @@
         "name": "extensionConfiguration",
         "type": "String",
         "description": "Optional extension configuration for the gRPC server",
-        "default": "{}"
+        "default": "{\"pipeline\":{\"name\":\"object_tracking\",\"version\":\"person_vehicle_bike_tracking\",\"parameters\":{\"detection-device\":\"GPU\"}}}"
       }
     ],
     "sources": [
