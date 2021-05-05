@@ -25,7 +25,7 @@
         "name": "inferencingUrl",
         "type": "String",
         "description": "inferencing Url",
-        "default": "http://openvino:4000/vehicleDetection"
+        "default": "http://openvino:4000/vehicleClassification"
       },
       {
         "name": "inferencingUserName",
