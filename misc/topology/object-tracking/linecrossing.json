@@ -104,12 +104,15 @@
             {
               "@type": "#Microsoft.VideoAnalyzer.LineCrossingProcessor",
               "name": "lineCrossing",
-              "inputs": [{ "nodeName" : "objectTracker" } ],
-
+              "inputs": [
+                    { 
+                        "nodeName" : "objectTracker" 
+                    } 
+                ],
               "lines": [
                 {
                   "@type": "#Microsoft.VideoAnalyzer.NamedLineString",
-                  "name": "centerline",
+                  "name": "center line",
                   "line": "[[0.5,0.1], [0.5,0.9]]"
                 }
               ]
@@ -122,7 +125,7 @@
                 "name":"iotHubSink",
                 "inputs":[
                     {
-                        "nodeName":"objectTracker"
+                        "nodeName":"lineCrossing"
                     }
                 ]
             }
