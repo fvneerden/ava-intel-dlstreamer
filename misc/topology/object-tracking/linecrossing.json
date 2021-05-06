@@ -40,14 +40,12 @@
             {
                 "name":"linecrossingName",
                 "type":"string",
-                "description":"linecrossing name",
-                "default": "linecrossing"
+                "description":"linecrossing name"
             },
             {
                 "name":"lineCoordinates",
                 "type":"string",
-                "description":"line coordinates",
-                "default": ""
+                "description":"line coordinates"
             },
             {
                 "name":"hubSinkOutputName",
