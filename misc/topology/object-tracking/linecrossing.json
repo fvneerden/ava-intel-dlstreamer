@@ -38,6 +38,18 @@
                 "default": "dummyUserName"
             },
             {
+                "name":"linecrossingName",
+                "type":"string",
+                "description":"linecrossing name",
+                "default": "linecrossing"
+            },
+            {
+                "name":"lineCoordinates",
+                "type":"string",
+                "description":"line coordinates",
+                "default": ""
+            },
+            {
                 "name":"hubSinkOutputName",
                 "type":"string",
                 "description":"hub sink output name",
@@ -112,8 +124,8 @@
               "lines": [
                 {
                   "@type": "#Microsoft.VideoAnalyzer.NamedLineString",
-                  "name": "CafeteriaLineXing",
-                  "line": "[[0.5,0.1], [0.5,0.9]]"
+                  "name": "${linecrossingName}",
+                  "line": "${lineCoordinates}"
                 }
               ]
             }
