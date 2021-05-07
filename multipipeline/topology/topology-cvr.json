@@ -139,7 +139,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "sample-grpc-extension-assets",
+          "title": "intel-demo",
           "description": "Sample video using gRPC extension assets",
           "segmentLength": "PT30S"
         },
