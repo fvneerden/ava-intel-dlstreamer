@@ -125,7 +125,7 @@
       {
         "@type": "#Microsoft.VideoAnalyzer.VideoSink",
         "name": "videoSink",
-        "videoName": "sample-grpc-Intel-video",
+        "videoName": "sample-grpc-intel-video",
         "inputs": [
           {
             "nodeName": "rtspSource",
