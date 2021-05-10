@@ -125,7 +125,7 @@
       {
         "@type": "#Microsoft.VideoAnalyzer.VideoSink",
         "name": "videoSink",
-        "videoName": "sample-grpc-extension-assets",
+        "videoName": "sample-grpc-Intel-video",
         "inputs": [
           {
             "nodeName": "rtspSource",
@@ -140,7 +140,7 @@
         ],
         "videoCreationProperties": {
           "title": "intel-demo",
-          "description": "Sample video using gRPC extension assets",
+          "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
         "localMediaCachePath": "/var/lib/videoanalyzer/tmp/",
