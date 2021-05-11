@@ -46,6 +46,12 @@
         "default": "iothubsinkoutput"
       },
       {
+        "name": "hubSourceInput",
+        "type": "String",
+        "description": "input name for hub source",
+        "default": "recordingTrigger"
+      },
+      {
         "name": "imageScaleMode",
         "type": "String",
         "description": "image scaling mode",
