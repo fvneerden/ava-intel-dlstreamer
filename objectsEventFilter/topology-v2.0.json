@@ -63,11 +63,17 @@
         "description": "Optional extension configuration for the gRPC server",
         "default": "{}"
       },
-      {
+			{
         "name": "hubSourceInput",
         "type": "String",
         "description": "input name for hub source",
         "default": "recordingTrigger"
+      },
+      {
+      	"name": "hubSinkOutputName",
+      	"type": "String",
+      	"description": "hub sink output name",
+      	"default": "detectedObjects"
       }
     ],
     "sources": [
@@ -174,7 +180,7 @@
         "localMediaCachePath": "/var/lib/videoanalyzer/tmp/",
         "localMediaCacheMaximumSizeMiB": "2048"
       },
-            {
+      {
         "@type": "#Microsoft.VideoAnalyzer.IoTHubMessageSink",
         "name": "hubSink",
         "hubOutputName": "${hubSinkOutputName}",
