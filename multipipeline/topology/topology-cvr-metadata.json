@@ -134,11 +134,11 @@
                 "property": "mediaType",
                 "operator": "is",
                 "value": "video"
-              },
-              {
-                "nodeName":"grpcExtension"
               }
             ]
+          },
+          {
+            "nodeName":"grpcExtension"
           }
         ],
         "videoCreationProperties": {
