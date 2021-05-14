@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "intel-cafeteria",
+          "title": "intel-waitingroom",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
