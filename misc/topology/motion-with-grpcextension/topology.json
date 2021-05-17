@@ -110,29 +110,6 @@
         ]
       },
       {
-        "@type": "#Microsoft.VideoAnalyzer.SignalGateProcessor",
-        "name": "signalGateProcessor",
-        "inputs": [
-          {
-            "nodeName": "motionDetection"
-          },
-          {
-            "nodeName": "rtspSource",
-            "outputSelectors": [
-              {
-                "property": "mediaType",
-                "operator": "is",
-                "value": "video"
-              }
-            ]
-          }
-        ],
-        "activationEvaluationWindow": "PT1S",
-        "activationSignalOffset": "PT0S",
-        "minimumActivationTime": "PT30S",
-        "maximumActivationTime": "PT30S"
-      },
-      {
         "@type": "#Microsoft.VideoAnalyzer.GrpcExtension",
         "name": "grpcExtension",
         "endpoint": {
