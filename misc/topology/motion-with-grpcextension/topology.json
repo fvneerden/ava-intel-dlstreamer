@@ -192,6 +192,9 @@
                 "value": "video"
               }
             ]
+          },
+          {
+            "nodeName":"grpcExtension"
           }
         ],
         "videoCreationProperties": {
