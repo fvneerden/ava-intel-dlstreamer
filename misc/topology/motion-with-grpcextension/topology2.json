@@ -22,12 +22,6 @@
         "description": "rtsp Url"
       },
       {
-        "name": "motionSensitivity",
-        "type": "String",
-        "description": "motion detection sensitivity",
-        "default": "medium"
-      },
-      {
         "name": "grpcExtensionAddress",
         "type": "String",
         "description": "grpc AVA Extension Address",
@@ -92,23 +86,6 @@
       }
     ],
     "processors": [
-      {
-        "@type": "#Microsoft.VideoAnalyzer.MotionDetectionProcessor",
-        "name": "motionDetection",
-        "sensitivity": "${motionSensitivity}",
-        "inputs": [
-          {
-            "nodeName": "rtspSource",
-            "outputSelectors": [
-              {
-                "property": "mediaType",
-                "operator": "is",
-                "value": "video"
-              }
-            ]
-          }
-        ]
-      },
       {
         "@type": "#Microsoft.VideoAnalyzer.GrpcExtension",
         "name": "grpcExtension",
