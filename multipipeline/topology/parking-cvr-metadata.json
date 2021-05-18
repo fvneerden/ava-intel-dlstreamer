@@ -125,7 +125,7 @@
       {
         "@type": "#Microsoft.VideoAnalyzer.VideoSink",
         "name": "videoSink",
-        "videoName": "sample-parking-intel-video",
+        "videoName": "demo-parking-intel-video",
         "inputs": [
           {
             "nodeName": "rtspSource",
