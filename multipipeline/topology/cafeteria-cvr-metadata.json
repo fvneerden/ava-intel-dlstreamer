@@ -125,7 +125,7 @@
       {
         "@type": "#Microsoft.VideoAnalyzer.VideoSink",
         "name": "videoSink",
-        "videoName": "sample-cafeteria-intel-video",
+        "videoName": "demo-cafeteria-intel-video",
         "inputs": [
           {
             "nodeName": "rtspSource",
