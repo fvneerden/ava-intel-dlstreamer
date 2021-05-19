@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "cafeteria-CPU",
+          "title": "cafeteria camera using Intel OpenVINO on CPU",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
