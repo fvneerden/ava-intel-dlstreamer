@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "parkinglot-VPU",
+          "title": "parkinglot camera using Intel OpenVINO on VPU",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
