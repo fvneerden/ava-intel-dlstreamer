@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "intel-parkinglot",
+          "title": "parkinglot-VPU",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
