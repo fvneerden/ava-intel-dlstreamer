@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "intel-waitingroom",
+          "title": "waitingroom-GPU",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
