@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "waitingroom-GPU",
+          "title": "waitingroom camera using Intel OpenVINO on GPU",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
