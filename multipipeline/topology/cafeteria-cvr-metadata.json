@@ -142,7 +142,7 @@
           }
         ],
         "videoCreationProperties": {
-          "title": "intel-cafeteria",
+          "title": "cafeteria-CPU",
           "description": "Sample video using Intel extension",
           "segmentLength": "PT30S"
         },
