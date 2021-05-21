@@ -1,0 +1,93 @@
+{
+  "apiVersion": "1.0",
+  "operations": [
+      {
+          "opName": "pipelineTopologyList",
+          "opParams": {}
+      },
+      {
+          "opName": "livePipelineList",
+          "opParams": {}
+      },
+    {
+      "opName": "pipelineTopologySet",
+      "opParams": {
+        "pipelineTopologyUrl": "https://raw.githubusercontent.com/fvneerden/ava-intel-dlstreamer/main/multipipeline/topology/topology-cvr.json"
+      }
+    },
+    {
+      "opName": "livePipelineSet",
+      "opParams": {
+        "name": "Sample-Pipeline-Tracking",
+        "properties": {
+          "topologyName": "InferencingWithGrpcExtension",
+          "description": "Sample pipeline description",
+          "parameters": [
+            {
+              "name": "rtspUrl",
+              "value": "rtsp://rtspsim:554/media/person-bicycle-car-detection.mkv"
+            },
+            {
+              "name": "rtspUserName",
+              "value": "testuser"
+            },
+            {
+              "name": "rtspPassword",
+              "value": "testpassword"
+            },
+            {
+              "name": "grpcExtensionAddress",
+              "value": "tcp://avaExtension:5001"
+            },
+            {
+              "name": "extensionConfiguration",
+              "value": "{\"pipeline\":{\"name\":\"object_detection\",\"version\":\"zone_events\",\"parameters\":{\"zone-event-config\":{\"zones\":[{\"name\":\"Zone1\",\"polygon\":[[0.01,0.1],[0.005,0.53],[0.11,0.53],[0.095,0.1]]},{\"name\":\"Zone2\",\"polygon\":[[0.14,0.2],[0.18,0.67],[0.35,0.67],[0.26,0.2]]},{\"name\":\"Zone3\",\"polygon\":[[0.4,0.3],[0.5,0.83],[0.85,0.83],[0.57,0.3]]}]}}}}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "opName": "livePipelineActivate",
+      "opParams": {
+        "name": "Sample-Pipeline-Tracking"
+      }
+    },
+    {
+      "opName": "WaitForInput",
+      "opParams": {
+        "message": "Press Enter to continue. This is start the deactivating steps."
+      }
+    },
+    {
+      "opName": "livePipelineDeactivate",
+      "opParams": {
+        "name": "Sample-Pipeline-Tracking"
+      }
+    },
+    {
+      "opName": "livePipelineDelete",
+      "opParams": {
+        "name": "Sample-Pipeline-Tracking"
+      }
+    },
+    {
+      "opName": "livePipelineList",
+      "opParams": {
+        
+      }
+    },
+    {
+      "opName": "pipelineTopologyDelete",
+      "opParams": {
+        "name": "InferencingWithGrpcExtension"
+      }
+    },
+    {
+      "opName": "pipelineTopologyList",
+      "opParams": {
+        
+      }
+    }
+  ]
+}
