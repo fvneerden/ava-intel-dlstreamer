@@ -85,6 +85,7 @@
               "mode": "sharedMemory",
               "SharedMemorySizeMiB": "64"
         },
+        "image": {  
           "format": {
             "@type": "#Microsoft.VideoAnalyzer.ImageFormatRaw",
             "pixelFormat": "bgr24"
