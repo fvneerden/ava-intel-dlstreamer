@@ -83,7 +83,7 @@
         "extensionConfiguration": "${extensionConfiguration}",
           "dataTransfer": {
               "mode": "sharedMemory",
-              "SharedMemorySizeMiB": "10"
+              "SharedMemorySizeMiB": "64"
         },
         "image": {  
           "format": {
