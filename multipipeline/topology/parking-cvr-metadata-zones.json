@@ -46,24 +46,6 @@
         "default": "iothubsinkoutput"
       },
       {
-        "name": "imageScaleMode",
-        "type": "String",
-        "description": "image scaling mode",
-        "default": "pad"
-      },
-      {
-        "name": "frameWidth",
-        "type": "String",
-        "description": "Width of the image frame to be sent to the gRPC Server.",
-        "default": "1280"
-      },
-      {
-        "name": "frameHeight",
-        "type": "String",
-        "description": "Height of the image frame to be sent to the gRPC Server.",
-        "default": "720"
-      },
-      {
         "name": "extensionConfiguration",
         "type": "String",
         "description": "Optional extension configuration for the gRPC server",
@@ -101,7 +83,7 @@
         "extensionConfiguration": "${extensionConfiguration}",
           "dataTransfer": {
               "mode": "sharedMemory",
-              "SharedMemorySizeMiB": "10"
+              "SharedMemorySizeMiB": "64"
         },
         "image": {
           "scale": {
