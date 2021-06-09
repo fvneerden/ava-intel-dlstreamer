@@ -159,7 +159,7 @@
       {
         "@type": "#Microsoft.VideoAnalyzer.VideoSink",
         "name": "videoSink",
-        "videoName": "sample-grpc-intel-video",
+        "videoName": "objecteventfilter-grpc-intel-video",
         "inputs": [
           {
             "nodeName": "signalGateProcessor",
@@ -170,6 +170,9 @@
                 "value": "video"
               }
             ]
+          },
+          {
+            "nodeName":"grpcExtension"
           }
         ],
         "videoCreationProperties": {
