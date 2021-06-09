@@ -67,8 +67,8 @@
           "url": "${rtspUrl}",
           "credentials": {
             "@type": "#Microsoft.VideoAnalyzer.UsernamePasswordCredentials",
-            "username": "{rtspUserName}",
-            "password": "{rtspPassword}"
+            "username": "${rtspUserName}",
+            "password": "${rtspPassword}"
           }
         }
       },
