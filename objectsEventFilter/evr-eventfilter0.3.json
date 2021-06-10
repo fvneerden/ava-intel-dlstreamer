@@ -5,21 +5,21 @@
     "description": "Analyzing live video using gRPCExtension to send video frames to the OpenVINO DL Streamer – Edge AI Extension module, from Intel",
     "parameters": [
       {
+        "name": "rtspUrl",
+        "type": "String",
+        "description": "Rtsp source Url address"
+      },
+      {
         "name": "rtspUserName",
         "type": "String",
-        "description": "rtsp source user name.",
-        "default": "dummyUserName"
+        "description": "Rtsp source user name.",
+        "default": "dummyUsername"
       },
       {
         "name": "rtspPassword",
         "type": "String",
-        "description": "rtsp source password.",
+        "description": "Rtsp source password.",
         "default": "dummyPassword"
-      },
-      {
-        "name": "rtspUrl",
-        "type": "String",
-        "description": "rtsp Url"
       },
       {
         "name": "grpcExtensionAddress",
@@ -40,17 +40,41 @@
         "default": "dummyPassword"
       },
       {
-        "name": "extensionConfiguration",
-        "type": "String",
-        "description": "Optional extension configuration for the gRPC server",
-        "default": "{}"
-      },
-      {
         "name": "hubSinkOutputName",
         "type": "String",
         "description": "Hub sink output name",
         "default": "iothubsinkoutput"
       },
+      {
+        "name": "hubSourceInput",
+        "type": "String",
+        "description": "input name for hub source",
+        "default": "recordingTrigger"
+      },
+      {
+        "name": "imageScaleMode",
+        "type": "String",
+        "description": "image scaling mode",
+        "default": "pad"
+      },
+      {
+        "name": "frameWidth",
+        "type": "String",
+        "description": "Width of the image frame to be sent to the gRPC Server.",
+        "default": "416"
+      },
+      {
+        "name": "frameHeight",
+        "type": "String",
+        "description": "Height of the image frame to be sent to the gRPC Server.",
+        "default": "416"
+      },
+      {
+        "name": "extensionConfiguration",
+        "type": "String",
+        "description": "Optional extension configuration for the gRPC server",
+        "default": "{}"
+      }
     ],
     "sources": [
       {
@@ -65,10 +89,31 @@
             "password": "${rtspPassword}"
           }
         }
+      },
+      {
+        "@type": "#Microsoft.VideoAnalyzer.IoTHubMessageSource",
+        "name": "iotMessageSource",
+        "hubInputName": "${hubSourceInput}"
       }
     ],
     "processors": [
-        {
+      {
+        "@type": "#Microsoft.VideoAnalyzer.SignalGateProcessor",
+        "name": "signalGateProcessor",
+        "inputs": [
+          {
+            "nodeName": "iotMessageSource"
+          },
+          {
+            "nodeName": "rtspSource"
+          }
+        ],
+        "activationEvaluationWindow": "PT1S",
+        "activationSignalOffset": "-PT5S",
+        "minimumActivationTime": "PT30S",
+        "maximumActivationTime": "PT30S"
+      },
+      {
         "@type": "#Microsoft.VideoAnalyzer.GrpcExtension",
         "name": "grpcExtension",
         "endpoint": {
@@ -86,6 +131,11 @@
               "SharedMemorySizeMiB": "10"
         },
         "image": {
+          "scale": {
+            "mode": "${imageScaleMode}",
+            "width": "${frameWidth}",
+            "height": "${frameHeight}"
+          },
           "format": {
             "@type": "#Microsoft.VideoAnalyzer.ImageFormatRaw",
             "pixelFormat": "bgr24"
@@ -96,16 +146,39 @@
             "nodeName": "rtspSource"
           }
         ]
+      },
+      {
+        "@type": "#Microsoft.VideoAnalyzer.SignalGateProcessor",
+        "name": "signalGateProcessor",
+        "inputs": [
+          {
+            "nodeName": "iotMessageSource"
+          },
+          {
+            "nodeName": "rtspSource",
+            "outputSelectors": [
+              {
+                "property": "mediaType",
+                "operator": "is",
+                "value": "video"
+              }
+            ]
+          }
+        ],
+        "activationEvaluationWindow": "PT1S",
+        "activationSignalOffset": "PT0S",
+        "minimumActivationTime": "PT30S",
+        "maximumActivationTime": "PT30S"
       }
     ],
-    "sinks": [
+"sinks": [
       {
         "@type": "#Microsoft.VideoAnalyzer.VideoSink",
         "name": "videoSink",
-        "videoName": "objecteventfilter-grpc-intel-video",
+        "videoName": "sample-grpc-intel-video",
         "inputs": [
           {
-            "nodeName": "rtspSource",
+            "nodeName": "signalGateProcessor",
             "outputSelectors": [
               {
                 "property": "mediaType",
