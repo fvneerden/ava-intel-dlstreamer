@@ -43,7 +43,7 @@
         "name": "hubSinkOutputName",
         "type": "String",
         "description": "Hub sink output name",
-        "default": "iothubsinkoutput"
+        "default": "detectedObjects"
       },
       {
         "name": "hubSourceInput",
